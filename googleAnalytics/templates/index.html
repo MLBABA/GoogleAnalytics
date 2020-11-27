@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Google Analytics</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('fun1')}}"method="post">
+    	<input type="text" name='channelGrouping', placeholder='channelGrouping' required="required" />
+	<input type="date" name="date" placeholder="date" required="required" />
+	<input type="text" name="fullVisitorId" placeholder="fullVisitorId" required="required" />
+	<input type="number" name="visitId" placeholder="visitId" required="required" />
+	<input type="number" name="visitNumber" placeholder="visitNumber" required="required" />
+	<input type="number" name="visitStartTime" placeholder="visitStartTime" required="required" />
+	<input type="text" name="device.browser" placeholder="device.browser" required="required" />
+	<input type="text" name="device.operatingSystem" placeholder="device.operatingSystem" required="required" />
+	<input type="boolean" name="device.isMobile" placeholder="device.isMobile" required="required" />
+	<input type="text" name="device.deviceCategory" placeholder="device.deviceCategory" required="required" />
+	<input type="text" name="geoNetwork.continent" placeholder="geoNetwork.continent" required="required" />
+	<input type="text" name="geoNetwork.subContinent" placeholder="geoNetwork.subContinent" required="required" />
+	<input type="text" name="geoNetwork.country" placeholder="geoNetwork.country" required="required" />
+	<input type="text" name="geoNetwork.region" placeholder="geoNetwork.region" required="required" />
+	<input type="text" name="geoNetwork.metro" placeholder="geoNetwork.metro" required="required" />
+	<input type="text" name="geoNetwork.city" placeholder="geoNetwork.city" required="required" />
+	<input type="text" name="geoNetwork.networkDomain" placeholder="geoNetwork.networkDomain" required="required" />
+ 	<input type="number" name="totals.hits" placeholder="totals.hits" required="required" />
+	<input type="number" name="totals.pageviews" placeholder="totals.pageviews" required="required" />
+	<input type="number" name="totals.timeOnSite" placeholder="totals.timeOnSite" required="required" />
+	<input type="number" name="totals.sessionQualityDim" placeholder="totals.sessionQualityDim" required="required" />
+	<input type="number" name="totals.transactions" placeholder="totals.transactions" required="required" />
+	<input type="number" name="totals.transactionRevenue" placeholder="totals.transactionRevenue" required="required" />
+	<input type="text" name="trafficSource.referralPath" placeholder="trafficSource.referralPath" required="required" />
+	<input type="text" name="trafficSource.campaign" placeholder="trafficSource.campaign" required="required" />
+	<input type="text" name="trafficSource.source" placeholder="trafficSource.source" required="required" />
+	<input type="text" name="trafficSource.medium" placeholder="trafficSource.medium" required="required" />
+	<input type="text" name="trafficSource.keyword" placeholder="trafficSource.keyword" required="required" />
+	<input type="text" name="trafficSource.adContent" placeholder="trafficSource.adContent" required="required" />
+	<input type="number" name="weekday" placeholder="weekday" required="required" />
+	<input type="number" name="day" placeholder="day" required="required" />
+	<input type="number" name="month" placeholder="month" required="required" />
+	<input type="number" name="year" placeholder="year" required="required" />
+	<input type="number" name="visitHour" placeholder="visitHour" required="required" />
+	<input type="number" name="is_weekend" placeholder="is_weekend" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
